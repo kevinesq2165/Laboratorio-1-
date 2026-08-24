@@ -43,7 +43,7 @@ namespace Pract2_Descuentos
                 {
                     DescuentoPorcentaje = 0.20m;
                 }
-                else if (ValorVentas >= 100 && ValorVentas <= 299)
+                else if (ValorVentas > 100 && ValorVentas <= 299)
                 {
                     DescuentoPorcentaje = 0.10m;
                 }
