@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,15 +30,30 @@ namespace Pract1_Controles
             }
             else
             {
-                lblFecha.Text = "La fecha es: " + txtDia.Text + " " + txtMes.Text + " " + txtAnio.Text;
+                int dia;
+                int mes;
+
+                if (!int.TryParse(txtDia.Text, out dia) || dia < 1 || dia > 31)
+                {
+                    MessageBox.Show("El día debe ser un número entre 1 y 31");
+                }
+                else if (!int.TryParse(txtMes.Text, out mes) || mes < 1 || mes > 12)
+                {
+                    MessageBox.Show("El mes debe ser un número entre 1 y 12");
+                }
+                else
+                {
+                    lblFecha.Text = "La fecha es: " + txtDia.Text + " " + txtMes.Text + " " + txtAnio.Text;
+                }
             }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             MessageBox.Show("La ventana está por cerrar");
-            MessageBox.Show("Cerrando","Aviso",MessageBoxButtons.OK, MessageBoxIcon.Information); 
+            MessageBox.Show("Cerrando", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
     }
 }
+
